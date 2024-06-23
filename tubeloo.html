@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to TubeLoo - The Ultimate YouTube Downloader!</title>
+    <style>
+        body {
+            background-image: url('https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif');
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            color: yellow;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px #FF0000, 4px 4px #0000FF;
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background-color: rgba(0, 0, 255, 0.5);
+            border: 5px dashed lime;
+            margin: 20px;
+            padding: 10px;
+        }
+
+        .button {
+            background-color: #FF00FF;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        marquee {
+            font-size: 24px;
+            color: #FF1493;
+        }
+
+        code {
+            background-color: black;
+            color: #00FF00;
+            padding: 10px;
+            border: 3px ridge silver;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee direction="right" scrollamount="10">🎉 NEW! TubeLoo v1.0 is here! Download YouTube videos like it's 1999!
+        🎉</marquee>
+
+    <h1>TubeLoo</h1>
+    <h2>The Coolest YouTube Downloader for Python!</h2>
+
+    <div class="container">
+        <p>Are you tired of watching videos online? Want to save them forever? TubeLoo is here to save the day!</p>
+        <button class="button" onclick="alert('Thanks for clicking! Download coming... eventually.')">DOWNLOAD
+            NOW!</button>
+    </div>
+
+    <div class="container">
+        <h3>Getting started</h3>
+        <h4>Clone the project</h4>
+        <code>
+            git clone https://github.com/iamvictormwangi/tubeloo
+        </code>
+        <h4>Make the tubeloo executable</h4>
+        <code>
+            cd tubeloo
+        </code>
+        <br>
+        <br>
+        <br>
+        <br>
+        <code>
+            chmod +x tubeloo
+        </code>
+        <h4>Move the tubeloo file to path</h4>
+        <code>
+            mv tubeloo /usr/local/bin
+        </code>
+        <p>That's it, tubeloo is installed</p>
+        <h3>Usage</h3>
+        <code>
+            tubeloo 'http://link-here'
+        </code>
+        <h4>Download a playlist</h4>
+        <code>
+            tubeloo --p 'http://link-here'
+        </code>
+    </div>
+
+    <div class="container">
+        <h3>Features</h3>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>🚀 Lightning fast downloads (on 56k modems)</li>
+            <li>🎵 Audio extraction</li>
+            <li>📺 Playlist support</li>
+            <li>🌈 Supports all 16 web colors!</li>
+        </ul>
+    </div>
+
+    <marquee direction="left" scrollamount="5">💾 Compatible with Windows 98, ME, and 2000! 💾</marquee>
+
+    <div style="margin-top: 50px;">
+        <img src="https://hitwebcounter.com/counter/counter.php?page=7962442&style=0006&nbdigits=5&type=page&initCount=0"
+            border="0">
+        <p>You are visitor number
+            <script>document.write(Math.floor(Math.random() * 1000) + 1);</script>!
+        </p>
+    </div>
+</body>
+
+</html>

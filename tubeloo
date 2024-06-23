@@ -1,0 +1,53 @@
+#!/bin/python3
+
+# Author: Victor Mwangi
+# Description: Download youtube videos
+
+import argparse
+from pytubefix import YouTube, Playlist
+from pytubefix.cli import on_progress
+import os
+
+
+def download_youtube_video(url):
+    yt = YouTube(url, on_progress_callback=on_progress)
+    print("Title:", yt.title)
+
+    ys = yt.streams.get_highest_resolution()
+
+    # Get the path to the Downloads folder
+    download_path = os.path.join(os.path.expanduser("~"), "Downloads")
+
+    ys.download(download_path)
+    print(f"Download complete! Video saved to {download_path}")
+
+
+def download_youtube_playlist(url):
+    playlist = Playlist(url)
+    print(f'Downloading playlist: {playlist.title}')
+
+    # Get the path to the Downloads folder
+    download_path = os.path.join(os.path.expanduser("~"), "Downloads")
+
+    for video in playlist.videos:
+        print(f'Downloading video: {video.title}')
+        ys = video.streams.get_highest_resolution()
+        ys.download(download_path)
+        print(f'Video saved to {download_path}')
+    print("Playlist download complete!")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Download a YouTube video or playlist in the highest resolution.")
+    parser.add_argument(
+        "url", help="The URL of the YouTube video or playlist to download")
+    parser.add_argument("--p", action="store_true",
+                        help="Download a playlist if this flag is set")
+
+    args = parser.parse_args()
+
+    if args.p:
+        download_youtube_playlist(args.url)
+    else:
+        download_youtube_video(args.url)
